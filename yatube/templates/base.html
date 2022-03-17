@@ -23,11 +23,16 @@
   <body>
     {% include 'includes/header.html' %}
     <main>
+      {% if not post_detail %}
       <div class="container py-5">  
-        {% block content %}
+      {% endif %}
+      {% block content %}
           Контент не подвезли :(
         {% endblock %}
-      </div>   
+      {% if not post_detail %}
+      </div>
+      {% endif %}
+         
     </main>
     {% include 'includes/footer.html' %}
   </body>
